@@ -1,0 +1,12 @@
+.title {
+    font-size: 400%;
+    font-family: 'Arvo';
+}
+
+.title--red{
+    color: red;
+}
+
+.title--black{
+    color: black;
+}
