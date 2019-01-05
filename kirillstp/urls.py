@@ -22,5 +22,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('gallery/', include('gallery.urls')),
     path('about/', include('about.urls')),
-    path('', RedirectView.as_view(url='/home/'))
+    path('', RedirectView.as_view(url='/home/')),
+    path('waveform/', include('waveform.urls'))
 ]

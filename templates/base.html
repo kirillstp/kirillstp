@@ -1,14 +1,23 @@
 <!doctype html>
 <html>
+    {% load static %}
+    <script src="{% static 'main.js' %}" type="text/javascript"></script>
     <head>
-        {% load static %}
-        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
-        <meta charset="utf-8"/>
-        <h1 class="title title--black"> Kirill Stepanov </h1>
-        {% block title %}{% endblock %}
+            <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+            <meta charset="utf-8"/>
     </head>
     <body>
+        <div class="header">
+            <div class="header__title header__title--width">
+                <h1 class="header__title--black"> Kirill Stepanov </h1>
+            </div>
+            <div class="header__image header__image--width header__image--height" id='header__image'>
+                <script src="{% static 'waveform.js' %}" type="text/javascript"></script>
+            </div>
+        </div>
+        <script src="{% static 'title.js' %}" type="text/javascript"></script>
+        {% block title %}{% endblock %}
         <div>Navbar</div>
         {% block content %}{% endblock %}
     </body>

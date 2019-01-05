@@ -1,12 +1,25 @@
-.title {
-    font-size: 400%;
+.header__title {
+    font-size:200%;
     font-family: 'Arvo';
 }
-
-.title--red{
-    color: red;
+.header__title--width {
+    width:70%;
 }
 
-.title--black{
+.header__image--width {
+    width:70%;
+}
+
+.header__image--height {
+    width:100%;
+}
+
+.header__title--black{
     color: black;
+}
+
+.header {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
