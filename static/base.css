@@ -1,25 +1,69 @@
-.header__title {
-    font-size:200%;
-    font-family: 'Arvo';
-}
-.header__title--width {
-    width:70%;
-}
-
-.header__image--width {
-    width:70%;
-}
-
-.header__image--height {
+.header {
+    height:10%;
     width:100%;
+}
+
+.header__text {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header__text--width {
+    width:40%;
+}
+
+.header__title {
+    font-size:300%;
+    font-family: 'Arvo';
+    margin-bottom:1px;
 }
 
 .header__title--black{
     color: black;
 }
 
-.header {
+.header__subtitle {
+    font-size:70%;
+    font-family: 'Arvo';
+    margin:0;
+}
+
+.header__subtitle--grey {
+    color:grey;
+}
+
+.header__image--width {
+    width:100%;
+}
+
+.header__image--height {
+    height:100%;
+}
+  
+.navbar{ 
+    width:100%;
     display:flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.navbar__button {
+    padding: 1% 10% 1%;
+    margin: 0% 1% 1% 1%;
+    text-decoration: black;
+    text-transform: uppercase;
+    box-shadow: 0 1px 0 darkgrey;
+}
+
+.navbar_text {
+    font-size: 100%;
+    font-weight: 900;
+    font-family: 'Arvo';
+    color: black;
+}
+
+.navbar__button:hover {
+    background-color: rgba(25,25,25,0.1);
+    box-shadow: 0 0px 0 darkgrey;
 }

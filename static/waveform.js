@@ -1,6 +1,7 @@
 // Self executing function
 (function() {
-    ['resize', 'load'].forEach( evt => window.addEventListener(evt, waveform));
+    window.addEventListener('load', waveform);
+    window.addEventListener('resize', waveform);
 })();
 
 function waveform(){
@@ -24,33 +25,31 @@ function waveform(){
 function render(data) {
     let block = document.getElementById('header__image');
     let width = block.clientWidth;
-    let height = block.clientHeight;
+    let height = 0.1* document.documentElement.clientHeight;
+    console.log(width)
     let canvas = document.getElementById('header__waveform');
-    if (canvas === null) {
-        canvas = document.createElement('canvas');
-        canvas.id = 'header__waveform';
-        canvas.width = width;
-        canvas.height = height;
-    }
-    else {
+    if (canvas !== null) {
         block.removeChild(canvas);
     }
+    canvas = document.createElement('canvas');
+    canvas.id = 'header__waveform';
+    canvas.width = width;
+    canvas.height = 1*height;
     if (canvas.getContext) {
         let ctx = canvas.getContext('2d');
-        // ctx.clearRect(0, 0, ctx.width, ctx.height);
-        ctx.beginPath();
-        ctx.lineWidth = "1";
-        ctx.strokeStyle = "#FF0000";
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         
+        ctx.beginPath();
+        ctx.lineWidth = "2";
+        ctx.strokeStyle = "#81858c";
+        // ctx.moveTo(x_pix, y_pix);
+        ctx.imageSmoothingEnabled = true;
         for (idx in data.x) {
-            let x_pix = parseInt(data.x[idx]*width);
-            let y_pix = parseInt(data.y[idx]*height+0.5*height);
-            console.log(x_pix,y_pix)
-            // ctx.moveTo(x_pix, y_pix);
-            ctx.lineTo(x_pix, y_pix);
             
+            let x_pix = data.x[idx]*width;
+            let y_pix = 0.3*data.y[idx]*height+0.5*height;
+            ctx.lineTo(x_pix, y_pix);
             ctx.stroke();
-
         }
         block.appendChild(canvas);
     }

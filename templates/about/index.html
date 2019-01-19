@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>{% block title %}About{% endblock %}</h3>
-<p>Hello, World!</p>
+<div class='about'>
+    <div class='about__text'>
+        <p class='about__text--font'>{{about.paragraph_one}} </p>
+        <p class='about__text--font'>{{about.paragraph_two}}</p>
+    </div>
+</div>
 {% endblock %}

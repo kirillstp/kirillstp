@@ -1,1 +1,0 @@
-document.writeln('This is js')
