@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'gallery',
-    'waveform'
+    'contact',
 ]
 
 MIDDLEWARE = [
