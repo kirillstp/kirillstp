@@ -19,9 +19,8 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),
     path('gallery/', include('gallery.urls')),
     path('about/', include('about.urls')),
-    path('', RedirectView.as_view(url='/home/')),
+    path('', RedirectView.as_view(url='/about/')),
     path('waveform/', include('waveform.urls'))
 ]

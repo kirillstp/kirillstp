@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>{% block title %}Gallery{% endblock %}</h3>
-<p>Hello, World!</p>
-{% endblock %}
+<div class='gallery'>
+    {% load static %}
+    {% for gallery_item in gallery_list %}
+    <div class='gallery__item'>
+        <div class='gallery__image'>
+            {% with gallery_item.image_path as image_static %}
+                <img class="gallery__image--dim" 
+                     src="{% static image_static %}">
+                </img>
+            {% endwith %}
+        </div>
+        <div class='gallery__text'>
+            <p class='gallery__item--title'>{{gallery_item.title}} </p>
+            <p class='gallery__item--text'>{{gallery_item.text}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
