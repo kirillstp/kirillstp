@@ -8,10 +8,12 @@
             <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'about.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'gallery.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'contact.css' %}">
             <meta charset="utf-8"/>
+            <meta name="viewport" content="width=450, initial-scale=1">
     </head>
     <body>
-        <div class="sticky">
+        <div class="sticky top">
             <div class="header" id="header">
                 <div class = 'header__text'>
                     <h1 class="header__title header__title--font"> Kirill Stepanov </h1>
@@ -51,6 +53,14 @@
         </div>
         <div class="content">
             {% block content %}{% endblock %}
+        </div>
+        <div class="sticky bottom">
+            <div class="footer">
+                <p class=footer__text>
+                    Kirill Stepanov - Software Developer @ 2019
+                </p>
+            </div>
+            Test
         </div>
     </body>
 </html>

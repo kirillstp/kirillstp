@@ -6,12 +6,12 @@
     align-items: center;
 }
 .gallery__item {
-    width: 80%;
+    width: 60%;
     border: 2px grey;
     border-style:groove;
     border-radius: 20px;
-    padding:1% 1%;
-    margin: 1% 1%;
+    padding:1% 5%;
+    margin-bottom: 1%;
     display:flex;
     flex-direction: row;
     justify-content: flex-start;

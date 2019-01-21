@@ -2,9 +2,21 @@
 
 {% block content %}
 <div class='about'>
-    <div class='about__text'>
+    {% load static %}
+
+    <div class='about__container'>
         <p class='about__text--font'>{{about.paragraph_one}} </p>
         <p class='about__text--font'>{{about.paragraph_two}}</p>
+    </div>
+    <div class='about__container about__logos'>
+            <img    class ="about__logo about__logo--size"
+                    src="{% static 'python.png' %}">
+            <img    class ="about__logo about__logo--size"
+                    src="{% static 'js.png' %}">
+            <img    class ="about__logo about__logo--size"
+                    src="{% static 'html.png' %}">
+            <img    class ="about__logo about__logo--size"
+                    src="{% static 'css.png' %}">
     </div>
 </div>
 {% endblock %}

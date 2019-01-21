@@ -2,8 +2,56 @@
 
 {% block content %}
 <div class='contact'>
-    <div class='contact__text'>
-        <p class='contact__text--font'>{{contact.contact_info}} </p>
+    <div class='contact__container'>
+        {% if message != '' %}
+        <div class='contact__form'>
+            <div class='contact__form--font'>
+                <p> <i class="icon icon--green material-icons">done</i> {{ message }} </p>
+            </div>
+        </div>
+        {% else %}
+        <div class='contact__form'>
+            <form method='post'>
+                {% csrf_token %}
+                {{ contact_form.non_field_errors }}
+                <div class='contact__formlayout'>
+                    {{contact_form.sender.errors}}
+                    <label class="contact__label"
+                            for="{{ contact_form.sender.id_sender }}"> 
+                        Your Email: 
+                    </label> 
+                    <div class="contact__input">
+                        {{contact_form.sender}}
+                    </div>
+                    {{contact_form.subject.errors}}
+                    <label class="contact__label"
+                            for="{{ contact_form.subject.id_subject }}"> 
+                        Subject:
+                    </label> 
+                    <div class="contact__input">
+                        {{contact_form.subject}}
+                    </div>
+                    {{contact_form.message.errors}}
+                    <label class="contact__label"
+                            for="{{ contact_form.message.id_message }}"> 
+                        Message:
+                    </label> 
+                    <div class="contact__input">
+                        {{contact_form.message}}
+                    </div>
+                </div>
+                <button class="contact__send--button" 
+                        type="submit">
+                    Send
+                </button>
+            </form>
+        </div>
+        <div class='contact__message'>
+            <p class='contact__message--font' >
+                {{ contact.contact_info }}
+            </p>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -1,16 +1,39 @@
 .about {
     width: 100%;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.about__text {
+.about__container {
     width: 60%;
     border: 2px grey;
     border-style:groove;
     border-radius: 20px;
     padding:1% 5%;
+    margin-bottom: 1%;
+}
+
+.about__skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__logos{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__logo{
+    margin: 0 5% 0;
+}
+
+.about__logo--size{
+    height: 60px;
 }
 
 .about__text--font {

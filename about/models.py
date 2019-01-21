@@ -7,3 +7,4 @@ class About(models.Model):
     paragraph_two = models.TextField()
     last_changed = models.DateTimeField('date_published')
     
+    
