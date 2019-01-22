@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
     {% load static %}
-    <script src="{% static 'main.js' %}" type="text/javascript"></script>
     <head>
             <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,7 +28,7 @@
                 href="{% url 'about' %}">
                 About
                 </a>
-                <a class="navbar__button navbar_text navbar_button--color" 
+                <a class="navbar__button navbar_text navbar_button--color" test-tag = "foo"
                     {% if request.path == '/gallery/' %} 
                             id="navbar_button--active"
                     {% endif %}
