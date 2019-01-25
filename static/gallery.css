@@ -5,8 +5,12 @@
     justify-content: center;
     align-items: center;
 }
-.gallery__item {
+
+.gallery__container {
     width: 60%;
+}
+
+.gallery__item {
     border: 2px grey;
     border-style:groove;
     border-radius: 20px;

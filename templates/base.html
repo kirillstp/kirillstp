@@ -9,48 +9,52 @@
             <link rel="stylesheet" type="text/css" href="{% static 'gallery.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'contact.css' %}">
             <meta charset="utf-8"/>
-            <meta name="viewport" content="width=450, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+            <script src={% static "main.js" %}></script>
         <div class="sticky top">
             <div class="header" id="header">
                 <div class = 'header__text'>
                     <h1 class="header__title header__title--font"> Kirill Stepanov </h1>
                     <h2 class="header__subtitle header__subtitle--font"> Software Developer </h2>
                 </div>
-
             </div>
             <div class="navbar">
-                <a class="navbar__button navbar_text navbar_button--color" 
-                {% if request.path == '/about/' %} 
-                        id="navbar_button--active"
-                {% endif %}
-                href="{% url 'about' %}">
-                About
-                </a>
-                <a class="navbar__button navbar_text navbar_button--color" test-tag = "foo"
-                    {% if request.path == '/gallery/' %} 
+                <span class="navbar__buttons" id='navbar-buttons'>
+                    <a class="navbar__button navbar__text navbar_button--color" 
+                    {% if request.path == '/about/' %} 
                             id="navbar_button--active"
                     {% endif %}
-                href="{% url 'gallery' %}">
-                Gallery
-                </a>
-                <a class="navbar__button navbar_text navbar_button--color" 
-                {% if request.path == '/contact/' %} 
-                        id="navbar_button--active"
-                {% endif %}
-                href="{% url 'contact' %}">
-                Contact
-                </a>
-                <a class="navbar__link" href="https://github.com/kirillstp">
-                    <img class="navbar__image" src={% static 'github.png' %}> 
-                </a> 
-                <a class="navbar__link" href="https://linkedin.com/in/kirill-stepanov-27717064">
-                    <img class="navbar__image" src={% static 'ln.png' %}> 
-                </a> 
+                    href="{% url 'about' %}">
+                    About
+                    </a>
+                    <a class="navbar__button navbar__text navbar_button--color" test-tag = "foo"
+                        {% if request.path == '/gallery/' %} 
+                                id="navbar_button--active"
+                        {% endif %}
+                    href="{% url 'gallery' %}">
+                    Gallery
+                    </a>
+                    <a class="navbar__button navbar__text navbar_button--color" 
+                    {% if request.path == '/contact/' %} 
+                            id="navbar_button--active"
+                    {% endif %}
+                    href="{% url 'contact' %}">
+                    Contact
+                    </a>
+                </span>
+                <span class="navbar__links">
+                    <a class="navbar__link" href="https://github.com/kirillstp">
+                        <img class="navbar__image" src={% static 'github.png' %}>
+                    </a> 
+                    <a class="navbar__link" href="https://linkedin.com/in/kirill-stepanov-27717064">
+                        <img class="navbar__image" src={% static 'ln.png' %}> 
+                    </a> 
+                </span>
             </div>
         </div>
-        <div class="content">
+        <div class="content" id="content">
             {% block content %}{% endblock %}
         </div>
         <div class="sticky bottom">
@@ -59,7 +63,6 @@
                     Kirill Stepanov - Software Developer @ 2019
                 </p>
             </div>
-            Test
         </div>
     </body>
 </html>
