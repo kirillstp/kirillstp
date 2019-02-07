@@ -25,7 +25,7 @@
     font-size: 100%;
     font-family: 'Arvo';
     font-weight: 700;
-    
+    width: 100%;
 }
 
 .contact__input {
@@ -55,6 +55,10 @@
 }
 
 .contact__message--font {
-    font-size:125%;
+    font-size:100%;
     font-family: 'Arvo';
+}
+
+textarea {
+    width:100%;
 }
