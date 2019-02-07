@@ -1,12 +1,13 @@
-/* .sticky{
-    position:fixed;
-    width: 100%;
-    background-color:rgba(255, 255, 255, 0.9); 
+.sticky{
+    position: sticky; 
+    position: -webkit-sticky;
+    top:0;
+    background-color:rgba(255, 255, 255, 0.95); 
     z-index: 1000;
 
-}
+} 
 
-.top{ 
+/* .top{ 
     top: 0px;
 } */
 
@@ -46,8 +47,6 @@
 }
 
 .navbar{ 
-    /* top: 15vh;
-    position: absolute; */
     width:100%;
     display:flex;
     flex-direction: row;
@@ -73,11 +72,11 @@
     padding: 15px 1vw 10px;
     margin: 0% 5px 0%;
     text-decoration: black;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .navbar__text {
-    font-size: 15pt;
+    font-size: 17pt;
     font-weight: 900;
     font-family: 'Arvo';
     color: black;
@@ -94,15 +93,15 @@
 }
 
 .navbar__button:hover {
-    border-radius: 20px 20px 5px 5px;
     background-color: rgba(25,25,25,0.1);
+    border-radius: 3px 3px 1px 1px;
     box-shadow: 0 0px 0 darkgrey;
 }
 
 #navbar_button--active{
-    border: 1px grey;
+    border: 0px grey;
     border-style: groove groove none groove;
-    border-radius: 10px 10px 5px 5px;
+    border-radius: 3px 3px 1px 1px;
     box-shadow: 0 0px 0 darkgrey;
     background-color: rgba(25,25,25,0.1);
 }
@@ -110,7 +109,6 @@
 
 .bottom {
     top:96%;
-    height: 4%
 }
 
 .footer {
@@ -132,10 +130,14 @@
     display:flex;
     align-items: center;
     justify-content: space-around;
+    margin:1%;
+    padding: 15px 1vw 10px;
     background-color: rgba(25,25,25,0.1);
     box-shadow: 0 0px 0 darkgrey;
-    border: 2px grey;
-    border-radius: 5px 5px 5px 5px;
+    border: 0px grey;
+    border-style: groove groove none groove;
+    border-radius: 3px 3px 1px 1px;
+    text-transform: lowercase;
 }
 
 .dropnavbar__button:hover, .dropnavbar__button:focus {
@@ -162,4 +164,15 @@
 
 .material-icons {
     font-size:24pt;
+}
+
+.show {
+    display:block;
+}
+
+.dropnavbar__button--borders {
+    border-radius: 10px 10px 10px 10px !important;
+    margin: 1% !important;
+    border-style: groove groove groove groove;
+    border: 0px;
 }

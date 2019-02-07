@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class='contact'>
-    <div class='contact__container'>
+    <div class='contact__container' id="text-area">
         {% if message != '' %}
         <div class='contact__form'>
             <div class='contact__form--font'>
@@ -10,6 +10,11 @@
             </div>
         </div>
         {% else %}
+        <div class='contact__message'>
+                <p class='contact__message--font' >
+                    {{ contact.contact_info }}
+                </p>
+        </div>
         <div class='contact__form'>
             <form method='post'>
                 {% csrf_token %}
@@ -45,11 +50,6 @@
                     Send
                 </button>
             </form>
-        </div>
-        <div class='contact__message'>
-            <p class='contact__message--font' >
-                {{ contact.contact_info }}
-            </p>
         </div>
         {% endif %}
     </div>
