@@ -20,9 +20,17 @@
                 <h1 class="header__title header__title--font">kirill stepanov</h1>
                 <h2 class="header__subtitle header__subtitle--font"> software developer </h2>
             </div>
+            <span class="header__links">
+                    <a class="header__link" href="https://github.com/kirillstp">
+                        <img class="header__image" src={% static 'github.png' %}>
+                    </a> 
+                    <a class="header__link" href="https://linkedin.com/in/kirill-stepanov-27717064">
+                        <img class="header__image" src={% static 'ln.png' %}> 
+                    </a> 
+            </span>
         </div>
         <div class="navbar sticky" id="navbar">
-            <span class="navbar__buttons" id='navbar-buttons'>
+            <div class="navbar__buttons" id="navbar-buttons">
                 <a class="navbar__button navbar__text navbar_button--color" 
                 {% if request.path == '/about/' %} 
                         id="navbar_button--active"
@@ -44,15 +52,7 @@
                 href="{% url 'contact' %}">
                 contact
                 </a>
-            </span>
-            <span class="navbar__links">
-                <a class="navbar__link" href="https://github.com/kirillstp">
-                    <img class="navbar__image" src={% static 'github.png' %}>
-                </a> 
-                <a class="navbar__link" href="https://linkedin.com/in/kirill-stepanov-27717064">
-                    <img class="navbar__image" src={% static 'ln.png' %}> 
-                </a> 
-            </span>
+            </div>
         </div>
         <div class="content" id="content">
             {% block content %}{% endblock %}

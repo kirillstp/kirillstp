@@ -1,6 +1,7 @@
 
 (function () {
     ["resize", "load"].forEach(function(evt) {window.addEventListener(evt, optimizeForMobile)});
+    ["click", "touch"].forEach(function(evt) {window.addEventListener(evt, closeDropDown)});
 })();
 
  
@@ -40,3 +41,8 @@ function dropDownOnClick() {
     console.log("Test")
 }
 
+function closeDropDown(event) {
+    if (!event.target.matches('#dropnavbar__button')) {
+        document.getElementById('dropnavbar-content').classList.remove('show'); 
+    }
+}

@@ -8,15 +8,17 @@
         <div class='gallery__item'>
             <div class='gallery__image'>
                 {% with gallery_item.image_path as image_static %}
-                    <img class="gallery__image--dim" 
+                    <p class='gallery__item--title'>{{gallery_item.title}} </p>
+                    <p class='gallery__item--text'>{{gallery_item.text}}</p>
+                    <img class="gallery__image--dim gallery__image--center" 
                         src="{% static image_static %}">
                     </img>
                 {% endwith %}
             </div>
-            <div class='gallery__text'>
-                <p class='gallery__item--title'>{{gallery_item.title}} </p>
-                <p class='gallery__item--text'>{{gallery_item.text}}</p>
-            </div>
+            <!-- <div class='gallery__text'>
+                
+                
+            </div> -->
         </div>
     {% endfor %}
     </div>
